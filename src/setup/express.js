@@ -32,9 +32,10 @@ export default function setup(app) {
 
   app.use(cookieParser());
 
-  app.use(express.static(path.join(__dirname, '/../public')));
-
   // app.use(setupedPassport.initialize());
+  // app.use(setupedPassport.session());
+
+  app.use(express.static(path.join(__dirname, '/../public')));
 
   setupRoutes(app, setupedPassport);
 
@@ -46,10 +47,17 @@ export default function setup(app) {
 
   app.use((err, req, res, next) => {
     res.status(err.status || 500);
-    res.send({
-      error: err,
+
+    var params = {
+      error: (process.env.NODE_ENV != 'production') ? err : null,
       message: err.message
-    });
+    };
+
+    if (/^\/api/.test(req.originalUrl)) {
+      res.send(params);
+    } else {
+      res.render('error', params);
+    }
   });
 
 }
