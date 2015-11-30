@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "node ./bin/www",
-    "postinstall": "node ./tools/postinstall",
+    "postinstall": "node ./scripts/postinstall",
     "production": "gulp production",
     "build": "gulp build",
     "server:develop": "gulp server:develop",
