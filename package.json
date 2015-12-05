@@ -12,6 +12,7 @@
     "postinstall": "node ./scripts/postinstall",
     "production": "gulp production",
     "build": "gulp build",
+    "develop": "gulp develop",
     "server:develop": "gulp server:develop",
     "public:serve": "gulp public:serve"
   },
