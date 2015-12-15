@@ -28,6 +28,9 @@ module.exports = {
     },
     test: {
       src: [`${test}/**/*.js`, `!${test}/public/**/*.js`]
+    },
+    lint: {
+      src: [`${src}/**/*.js`, `!${src}/public/**/*.js`]
     }
   },
 
@@ -57,6 +60,9 @@ module.exports = {
     },
     test: {
       src: [`${test}/public/**/*.js`]
+    },
+    lint: {
+      src: [`${src}/public/**/*.js`]
     }
   },
 

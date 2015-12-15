@@ -9,12 +9,14 @@ var cssConfig = config.public.stylesheets;
 var imagesConfig = config.public.images;
 var fontsConfig = config.public.fonts;
 var testConfig = config.public.test;
+var lintConfig = config.public.lint;
 
 
 gulp.task('public:develop', () => {
   runSequence(
     'public:clean',
     'public:test',
+    'public:lint',
     [
       'public:htdocs',
       'public:javascripts:develop',
@@ -30,4 +32,5 @@ gulp.task('public:develop', () => {
   gulp.watch([imagesConfig.src], ['public:images']);
   gulp.watch([fontsConfig.src], ['public:fonts']);
   gulp.watch([testConfig.src], ['public:test']);
+  gulp.watch([lintConfig.src], ['public:lint']);
 });
