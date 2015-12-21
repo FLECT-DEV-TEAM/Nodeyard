@@ -10,5 +10,5 @@ var bsConfig = config._browserSync;
 gulp.task('public:serve', ['public:develop'], () => {
   server.init(bsConfig.options);
 
-  server.watch(`${bsConfig.options.server}/**/*`).on("change", server.reload);
+  server.watch(`**/*`).on("change", server.reload);
 });
