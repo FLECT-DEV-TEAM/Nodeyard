@@ -1,32 +1,54 @@
 import gulp from 'gulp';
 import sass from 'gulp-sass'
-import cssnext from 'gulp-cssnext';
+import postcss from 'gulp-postcss'
+import sourcemaps from 'gulp-sourcemaps'
+import autoprefixer from 'autoprefixer'
+import cssnano from 'cssnano'
+import postcssBrowserReporter from 'postcss-browser-reporter'
+import postcssCssnext from 'postcss-cssnext'
+import postcssImport from 'postcss-import'
+import postcssReporter from 'postcss-reporter'
+import postcssUrl from 'postcss-url'
 
 import config from '../../config';
 import handleErrors from '../../util/handle-errors';
 
-var cssConfig = config.public.stylesheets;
+var stylesheetsConfig = config.public.stylesheets;
 var sassConfig = config._sass;
-var cssnextConfig = config._cssnext;
+var autoprefixerConfig = config._autoprefixer;
 
 
 gulp.task('public:stylesheets', () => {
-  return gulp.src(cssConfig.src)
+  return gulp.src(stylesheetsConfig.src)
     .pipe(sass(sassConfig.options))
     .on('error', handleErrors)
-    .pipe(cssnext(cssnextConfig.options))
+    .pipe(sourcemaps.init())
+    .pipe(postcss([
+      autoprefixer(autoprefixerConfig.options),
+      postcssBrowserReporter(),
+      postcssCssnext(),
+      postcssImport(),
+      postcssReporter(),
+      postcssUrl()
+    ]))
     .on('error', handleErrors)
-    .pipe(gulp.dest(cssConfig.dest));
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest(stylesheetsConfig.dest));
 });
 
 gulp.task('public:stylesheets:production', () => {
-  cssnextConfig.options.compress = true;
-  cssnextConfig.options.sourcemap = false;
-
-  return gulp.src(cssConfig.src)
+  return gulp.src(stylesheetsConfig.src)
     .pipe(sass(sassConfig.options))
     .on('error', handleErrors)
-    .pipe(cssnext(cssnextConfig.options))
+    .pipe(postcss([
+      autoprefixer(autoprefixerConfig.options),
+      cssnano(),
+      postcssBrowserReporter(),
+      postcssCssnext(),
+      postcssImport(),
+      postcssReporter(),
+      postcssUrl()
+    ]))
     .on('error', handleErrors)
-    .pipe(gulp.dest(cssConfig.dest));
+    .pipe(gulp.dest(stylesheetsConfig.dest));
 });

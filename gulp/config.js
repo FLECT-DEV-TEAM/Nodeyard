@@ -87,11 +87,9 @@ module.exports = {
     }
   },
 
-  _cssnext: {
+  _autoprefixer: {
     options: {
-      browsers: 'last 2 versions',
-      compress: false,
-      sourcemap: true
+      browsers: 'last 2 versions'
     }
   },
 
