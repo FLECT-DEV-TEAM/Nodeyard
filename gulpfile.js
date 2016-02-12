@@ -1,7 +1,7 @@
 /*
   gulpfile.js
 */
-require('babel-core/register');
+require('babel-register');
 
 var requireDir = require('require-dir');
 
