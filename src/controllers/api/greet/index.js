@@ -1,13 +1,23 @@
 import express from 'express';
+import HttpErrors from 'http-errors';
 
-import greeting from '../../../common/greeting';
+import { greet } from '../../../lib/greeting';
 
-var router = express.Router();
+/* eslint-disable */
+const router = express.Router();
 
 
 router.get('/', (req, res, next) => {
-  var name = req.query.name;
-  res.send(greeting(name));
+  const name = req.query.name;
+
+  if (name) {
+    res.send({
+      greetingMessage: greet(name)
+    });
+  } else {
+    const err = HttpErrors(400, 'Bad Request');
+    next(err);
+  }
 });
 
 

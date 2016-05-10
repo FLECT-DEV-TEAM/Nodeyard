@@ -1,0 +1,426 @@
+<!doctype html>
+<title>Style Guide</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="style.css" rel="stylesheet">
+<script>examples={"base":"","target":"_self","css":["/Users/akira.miyake/Documents/Workspace/Nodeyard/dist/public/stylesheets/style.css"],"js":[],"bodyjs":[],"htmlcss":"background:none;border:0;clip:auto;display:block;height:auto;margin:0;padding:0;position:static;width:auto","bodycss":"background:none;border:0;clip:auto;display:block;height:auto;margin:0;padding:16px;position:static;width:auto"};</script>
+
+
+<header class="masthead">
+  <div class="container">
+    <a href="/" class="masthead-logo">
+      <img src="mdcss-logo.png" alt="Style Guide" height="32"> Style Guide
+    </a>
+    <nav class="masthead-nav">
+      <!-- TODO Add Page Navigation -->
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <div class="columns docs-layout">
+    <div class="one-fourth column">
+      <nav class="menu docs-menu">
+        
+		
+        <a class="menu-heading" href="#render-elements-consistently"><span>Render elements consistently</span></a>
+        
+				
+        <a class="menu-heading" href="#low-level-css-toolkit"><span>Low-Level CSS Toolkit</span></a>
+        
+				
+        <a class="menu-heading" href="#typography"><span>Typography</span></a>
+        
+		
+        <a class="menu-item" href="#base-style"><span>Base Style</span></a>
+        
+				
+        <a class="menu-item" href="#link-text"><span>Link Text</span></a>
+        
+				
+        <a class="menu-item" href="#font-sizing"><span>Font Sizing</span></a>
+        
+				
+        <a class="menu-item" href="#font-coloring"><span>Font Coloring</span></a>
+        
+				
+        <a class="menu-item" href="#horizontal-rules"><span>Horizontal Rules</span></a>
+        
+				
+	
+				
+        <a class="menu-heading" href="#container"><span>Container</span></a>
+        
+				
+        <a class="menu-heading" href="#buttons"><span>Buttons</span></a>
+        
+		
+        <a class="menu-item" href="#basic-buttons"><span>Basic Buttons</span></a>
+        
+				
+        <a class="menu-item" href="#ghost-buttons"><span>Ghost Buttons</span></a>
+        
+				
+        <a class="menu-item" href="#button-state"><span>Button State</span></a>
+        
+				
+        <a class="menu-item" href="#button-sizing"><span>Button Sizing</span></a>
+        
+				
+        <a class="menu-item" href="#block-button"><span>Block Button</span></a>
+        
+				
+	
+				
+        <a class="menu-heading" href="#forms"><span>Forms</span></a>
+        
+		
+        <a class="menu-item" href="#basic-forms"><span>Basic Forms</span></a>
+        
+				
+        <a class="menu-item" href="#form-state"><span>Form State</span></a>
+        
+				
+        <a class="menu-item" href="#form-sizing"><span>Form Sizing</span></a>
+        
+				
+	
+				
+	
+      </nav>
+    </div>
+
+    <main class="three-fourths column markdown-body">
+      
+		<section id="render-elements-consistently">
+			<h1 class="page-title">Render elements consistently</h1>
+
+			<div class="markdown-body">
+				<p>Rigging uses <a href="http://10up.github.io/sanitize.css/">sanitize.css</a> to make browsers render elements consistently.</p>
+
+				
+			</div>
+		</section>
+		
+		<section id="low-level-css-toolkit">
+			<h1 class="page-title">Low-Level CSS Toolkit</h1>
+
+			<div class="markdown-body">
+				<p>Rigging includes <a href="http://www.basscss.com/">Basscss</a> in order to speed, clarity, performance, and scalability.</p>
+
+				
+			</div>
+		</section>
+		
+		<section id="typography">
+			<h1 class="page-title">Typography</h1>
+
+			<div class="markdown-body">
+				
+				
+		<section id="base-style">
+			<h2 class="page-title">Base Style</h2>
+
+			<div class="markdown-body">
+				<pre><code class="lang-example:html">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+</code></pre>
+
+				
+			</div>
+		</section>
+		
+		<section id="link-text">
+			<h2 class="page-title">Link Text</h2>
+
+			<div class="markdown-body">
+				<p><code>&lt;a&gt;</code> Tag and <code>.link</code> class are available.</p>
+<pre><code class="lang-example:html">&lt;a href=&quot;#&quot;&gt;Default Link&lt;/a&gt;
+&lt;hr class=&quot;my1&quot; /&gt;
+&lt;span class=&quot;link active&quot;&gt;Acitve Link&lt;/span&gt;
+&lt;hr class=&quot;my1&quot; /&gt;
+&lt;span class=&quot;link disabled&quot;&gt;Disabled Link&lt;/span&gt;
+</code></pre>
+
+				
+			</div>
+		</section>
+		
+		<section id="font-sizing">
+			<h2 class="page-title">Font Sizing</h2>
+
+			<div class="markdown-body">
+				<pre><code class="lang-example:html">&lt;p class=&quot;font-size-xs&quot;&gt;Lorem ipsum dolor sit amet&lt;/p&gt;
+&lt;p class=&quot;font-size-sm&quot;&gt;Lorem ipsum dolor sit amet&lt;/p&gt;
+&lt;p class=&quot;font-size-md&quot;&gt;Lorem ipsum dolor sit amet&lt;/p&gt;
+&lt;p class=&quot;font-size-lg&quot;&gt;Lorem ipsum dolor sit amet&lt;/p&gt;
+&lt;p class=&quot;font-size-xl&quot;&gt;Lorem ipsum dolor sit amet&lt;/p&gt;
+</code></pre>
+
+				
+			</div>
+		</section>
+		
+		<section id="font-coloring">
+			<h2 class="page-title">Font Coloring</h2>
+
+			<div class="markdown-body">
+				<pre><code class="lang-example:html">&lt;p class=&quot;font-color-white&quot;&gt;White&lt;/p&gt;
+&lt;p class=&quot;font-color-gray-lighter&quot;&gt;Gray Lighter&lt;/p&gt;
+&lt;p class=&quot;font-color-gray-light&quot;&gt;Gray Light&lt;/p&gt;
+&lt;p class=&quot;font-color-gray&quot;&gt;Gray&lt;/p&gt;
+&lt;p class=&quot;font-color-gray-dark&quot;&gt;Gray Dark&lt;/p&gt;
+&lt;p class=&quot;font-color-gray-darker&quot;&gt;Gray Darker&lt;/p&gt;
+&lt;p class=&quot;font-color-black&quot;&gt;Black&lt;/p&gt;
+&lt;p class=&quot;font-color-true-black&quot;&gt;True Black&lt;/p&gt;
+&lt;p class=&quot;font-color-red&quot;&gt;Red&lt;/p&gt;
+&lt;p class=&quot;font-color-orange&quot;&gt;Orange&lt;/p&gt;
+&lt;p class=&quot;font-color-yellow&quot;&gt;Yellow&lt;/p&gt;
+&lt;p class=&quot;font-color-olive&quot;&gt;Olive&lt;/p&gt;
+&lt;p class=&quot;font-color-green&quot;&gt;Green&lt;/p&gt;
+&lt;p class=&quot;font-color-teal&quot;&gt;Teal&lt;/p&gt;
+&lt;p class=&quot;font-color-blue&quot;&gt;Blue&lt;/p&gt;
+&lt;p class=&quot;font-color-violet&quot;&gt;Violet&lt;/p&gt;
+&lt;p class=&quot;font-color-purple&quot;&gt;Purple&lt;/p&gt;
+&lt;p class=&quot;font-color-pink&quot;&gt;Pink&lt;/p&gt;
+&lt;p class=&quot;font-color-brown&quot;&gt;Brown&lt;/p&gt;
+&lt;p class=&quot;font-color-primary&quot;&gt;Primary = Blue (Default)&lt;/p&gt;
+&lt;p class=&quot;font-color-secondary&quot;&gt;Secondary = Gray Dark (Default)&lt;/p&gt;
+&lt;p class=&quot;font-color-success&quot;&gt;Success = Teal (Default)&lt;/p&gt;
+&lt;p class=&quot;font-color-info&quot;&gt;Info = Violet (Default)&lt;/p&gt;
+&lt;p class=&quot;font-color-warning&quot;&gt;Warning = Orange (Default)&lt;/p&gt;
+&lt;p class=&quot;font-color-danger&quot;&gt;Danger = Red (Default)&lt;/p&gt;
+</code></pre>
+
+				
+			</div>
+		</section>
+		
+		<section id="horizontal-rules">
+			<h2 class="page-title">Horizontal Rules</h2>
+
+			<div class="markdown-body">
+				<p><code>&lt;hr /&gt;</code> default margin is none. If you want margin, use <a href="http://www.basscss.com/#basscss-margin">basscss-margin</a>.</p>
+<pre><code class="lang-example:html">&lt;p&gt;Lorem ipsum dolor sit amet&lt;/p&gt;
+&lt;hr class=&quot;mt1 mb2&quot; /&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet&lt;/p&gt;
+</code></pre>
+
+				
+			</div>
+		</section>
+		
+			</div>
+		</section>
+		
+		<section id="container">
+			<h1 class="page-title">Container</h1>
+
+			<div class="markdown-body">
+				<p>Container that changing the grid at different screen widths.</p>
+<p>Using break point that defined on <a href="https://github.com/basscss/basscss/tree/master/modules/grid">basscss-grid</a>.</p>
+<pre><code class="lang-example:html">&lt;div class=&quot;container&quot;&gt;
+  &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+
+				
+			</div>
+		</section>
+		
+		<section id="buttons">
+			<h1 class="page-title">Buttons</h1>
+
+			<div class="markdown-body">
+				
+				
+		<section id="basic-buttons">
+			<h2 class="page-title">Basic Buttons</h2>
+
+			<div class="markdown-body">
+				<pre><code class="lang-example:html">&lt;button class=&quot;btn&quot;&gt;Default&lt;/button&gt;
+&lt;hr class=&quot;my1&quot; /&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn&quot;&gt;Link Button&lt;/a&gt;
+&lt;hr class=&quot;my1&quot; /&gt;
+&lt;button class=&quot;btn btn-primary&quot;&gt;Primary&lt;/button&gt;
+&lt;button class=&quot;btn btn-secondary&quot;&gt;Secondary&lt;/button&gt;
+&lt;button class=&quot;btn btn-success&quot;&gt;Success&lt;/button&gt;
+&lt;button class=&quot;btn btn-info&quot;&gt;Info&lt;/button&gt;
+&lt;button class=&quot;btn btn-warning&quot;&gt;Warning&lt;/button&gt;
+&lt;button class=&quot;btn btn-danger&quot;&gt;Danger&lt;/button&gt;
+</code></pre>
+
+				
+			</div>
+		</section>
+		
+		<section id="ghost-buttons">
+			<h2 class="page-title">Ghost Buttons</h2>
+
+			<div class="markdown-body">
+				<pre><code class="lang-example:html">&lt;button class=&quot;btn btn-ghost&quot;&gt;Default&lt;/button&gt;
+&lt;hr class=&quot;my1&quot; /&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn btn-ghost&quot;&gt;Link Button&lt;/a&gt;
+&lt;hr class=&quot;my1&quot; /&gt;
+&lt;button class=&quot;btn btn-ghost btn-primary&quot;&gt;Primary&lt;/button&gt;
+&lt;button class=&quot;btn btn-ghost btn-secondary&quot;&gt;Secondary&lt;/button&gt;
+&lt;button class=&quot;btn btn-ghost btn-success&quot;&gt;Success&lt;/button&gt;
+&lt;button class=&quot;btn btn-ghost btn-info&quot;&gt;Info&lt;/button&gt;
+&lt;button class=&quot;btn btn-ghost btn-warning&quot;&gt;Warning&lt;/button&gt;
+&lt;button class=&quot;btn btn-ghost btn-danger&quot;&gt;Danger&lt;/button&gt;
+</code></pre>
+
+				
+			</div>
+		</section>
+		
+		<section id="button-state">
+			<h2 class="page-title">Button State</h2>
+
+			<div class="markdown-body">
+				<pre><code class="lang-example:html">&lt;button class=&quot;btn btn-primary active&quot;&gt;.active&lt;/button&gt;
+&lt;button class=&quot;btn btn-ghost btn-secondary active&quot;&gt;active&lt;/button&gt;
+&lt;hr class=&quot;my1&quot; /&gt;
+&lt;button class=&quot;btn btn-primary disabled&quot;&gt;.disabled&lt;/button&gt;
+&lt;button class=&quot;btn btn-secondary&quot; disabled=true&gt;disabled=true&lt;/button&gt;
+&lt;button class=&quot;btn btn-ghost btn-success disabled&quot;&gt;.disabled&lt;/button&gt;
+&lt;button class=&quot;btn btn-ghost btn-info&quot; disabled=true&gt;disabled=true&lt;/button&gt;
+</code></pre>
+
+				
+			</div>
+		</section>
+		
+		<section id="button-sizing">
+			<h2 class="page-title">Button Sizing</h2>
+
+			<div class="markdown-body">
+				<pre><code class="lang-example:html">&lt;button class=&quot;btn btn-xs&quot;&gt;Extra Small&lt;/button&gt;
+&lt;button class=&quot;btn btn-sm&quot;&gt;Small&lt;/button&gt;
+&lt;button class=&quot;btn btn-md&quot;&gt;Medium&lt;/button&gt;
+&lt;button class=&quot;btn btn-lg&quot;&gt;Large&lt;/button&gt;
+&lt;button class=&quot;btn btn-xl&quot;&gt;Extra Large&lt;/button&gt;
+</code></pre>
+
+				
+			</div>
+		</section>
+		
+		<section id="block-button">
+			<h2 class="page-title">Block Button</h2>
+
+			<div class="markdown-body">
+				<pre><code class="lang-example:html">&lt;button class=&quot;btn btn-primary btn-block mb1&quot;&gt;Plane&lt;/button&gt;
+&lt;button class=&quot;btn btn-ghost btn-primary btn-block&quot;&gt;Ghost&lt;/button&gt;
+</code></pre>
+
+				
+			</div>
+		</section>
+		
+			</div>
+		</section>
+		
+		<section id="forms">
+			<h1 class="page-title">Forms</h1>
+
+			<div class="markdown-body">
+				
+				
+		<section id="basic-forms">
+			<h2 class="page-title">Basic Forms</h2>
+
+			<div class="markdown-body">
+				<pre><code class="lang-example:html">&lt;div class=&quot;form-group mb1&quot;&gt;
+  &lt;label class=&quot;form-group__label col-2&quot;&gt;Text&lt;/label&gt;
+  &lt;input type=&quot;text&quot; class=&quot;form-group__control&quot; placeholder=&quot;Text&quot; /&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;form-group mb1&quot;&gt;
+  &lt;label class=&quot;form-group__label col-2&quot;&gt;TextArea&lt;/label&gt;
+  &lt;textarea class=&quot;form-group__control&quot; placeholder=&quot;TextA5rea&quot;&gt;&lt;/textarea&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;form-group&quot;&gt;
+  &lt;label class=&quot;form-group__label col-2&quot;&gt;Selector&lt;/label&gt;
+  &lt;select class=&quot;form-group__control&quot;&gt;
+    &lt;option&gt;Alice&lt;/option&gt;
+    &lt;option&gt;Bob&lt;/option&gt;
+    &lt;option&gt;Carol&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/div&gt;
+</code></pre>
+
+				
+			</div>
+		</section>
+		
+		<section id="form-state">
+			<h2 class="page-title">Form State</h2>
+
+			<div class="markdown-body">
+				<pre><code class="lang-example:html">&lt;div class=&quot;form-group mb1&quot;&gt;
+  &lt;label class=&quot;form-group__label col-2&quot;&gt;.disabled&lt;/label&gt;
+  &lt;input type=&quot;text&quot; class=&quot;form-group__control disabled&quot; placeholder=&quot;Text&quot; /&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;form-group&quot;&gt;
+  &lt;label class=&quot;form-group__label col-2&quot;&gt;disabled=true&lt;/label&gt;
+  &lt;select class=&quot;form-group__control&quot; disabled=true&gt;
+    &lt;option&gt;Alice&lt;/option&gt;
+    &lt;option&gt;Bob&lt;/option&gt;
+    &lt;option&gt;Carol&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/div&gt;
+</code></pre>
+
+				
+			</div>
+		</section>
+		
+		<section id="form-sizing">
+			<h2 class="page-title">Form Sizing</h2>
+
+			<div class="markdown-body">
+				<pre><code class="lang-example:html">&lt;div class=&quot;form-group form-group--xs mb1&quot;&gt;
+  &lt;label class=&quot;form-group__label col-3&quot;&gt;Extra Small&lt;/label&gt;
+  &lt;input type=&quot;text&quot; class=&quot;form-group__control&quot; placeholder=&quot;Text&quot; /&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;form-group form-group--sm mb1&quot;&gt;
+  &lt;label class=&quot;form-group__label col-3&quot;&gt;Small&lt;/label&gt;
+  &lt;input type=&quot;text&quot; class=&quot;form-group__control&quot; placeholder=&quot;Text&quot; /&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;form-group form-group--md mb1&quot;&gt;
+  &lt;label class=&quot;form-group__label col-3&quot;&gt;Medium Small&lt;/label&gt;
+  &lt;input type=&quot;text&quot; class=&quot;form-group__control&quot; placeholder=&quot;Text&quot; /&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;form-group form-group--lg mb1&quot;&gt;
+  &lt;label class=&quot;form-group__label col-3&quot;&gt;Large&lt;/label&gt;
+  &lt;input type=&quot;text&quot; class=&quot;form-group__control&quot; placeholder=&quot;Text&quot; /&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;form-group form-group--xl&quot;&gt;
+  &lt;label class=&quot;form-group__label col-3&quot;&gt;Extra Large&lt;/label&gt;
+  &lt;input type=&quot;text&quot; class=&quot;form-group__control&quot; placeholder=&quot;Text&quot; /&gt;
+&lt;/div&gt;
+</code></pre>
+
+				
+			</div>
+		</section>
+		
+			</div>
+		</section>
+		
+    </main>
+  </div>
+  <footer class="footer">
+    Last modified Wednesday, 1 June 2016 14:55
+  </footer>
+</div>
+<script src="prism.js"></script>
+<script src="examples.js"></script>
+<script src="script.js"></script>
+

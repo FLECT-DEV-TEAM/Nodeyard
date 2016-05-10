@@ -4,12 +4,23 @@
  * Module dependencies.
  */
 
+var http = require('http');
+var path = require('path');
+var fs = require('fs');
+
+var config = require('config');
+var log4js = require('log4js');
+
+var debug = require('debug')('Nodeyard:server');
+
 var app = (require('../dist/app').default) ?
   require('../dist/app').default :
   require('../dist/app');
-var debug = require('debug')('Nodeyard:server');
-var http = require('http');
-var logger = require('../log4js').getLogger("startup");
+
+/**
+ * Setup log4js and get logger
+ */
+var logger = setupLog4jsAndGetLogger();
 
 /**
  * Get port from environment and store in Express.
@@ -31,6 +42,26 @@ var server = http.createServer(app);
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
+
+/**
+ * Setup log4js with config.log4js
+ */
+function setupLog4jsAndGetLogger() {
+  if (config.log4js.dir) {
+    try {
+      fs.mkdirSync(config.log4js.dir);
+    } catch(e) {
+      if (e.code != 'EEXIST') {
+        console.error("Could not set up log directory, error was: ", e);
+        process.exit(1);
+      }
+    }
+  }
+
+  log4js.configure(config.log4js.configure);
+
+  return log4js.getLogger('startup');
+}
 
 /**
  * Normalize a port into a number, string, or false.
