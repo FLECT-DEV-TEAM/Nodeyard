@@ -1,10 +1,8 @@
 import express from 'express';
 
-import setupExpress from './setup/express';
+import { setup } from './setups';
 
-
-var app = express();
-setupExpress(app);
-
+const app = express();
+setup(app);
 
 export default app;
