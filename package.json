@@ -24,6 +24,7 @@
     "watch:server:views": "watch 'npm run build:server:views' ./src/views",
     "watch:client": "npm run build:client -- --watch",
     "dev": "npm run lint:watch & npm run test:watch",
+    "check": "npm run lint && npm run test",
     "lint": "eslint --ignore-pattern '**/*\\.spec.js' './src/**/*.{js,jsx}'; exit 0",
     "lint:watch": "watch 'npm run lint' ./src",
     "test": "mocha --compilers js:espower-babel/guess './src/**/*\\.spec.js'; exit 0",
@@ -31,7 +32,7 @@
     "styleguide": "node ./scripts/styleguide",
     "jsdoc": "jsdoc --recurse ./src --destination ./jsdoc",
     "nodemon": "nodemon --watch ./dist",
-    "webpack-dev-server": "webpack-dev-server"
+    "webpack-dev-server": "webpack-dev-server --host 0.0.0.0"
   },
   "dependencies": {
     "babel-cli": "^6.8.0",

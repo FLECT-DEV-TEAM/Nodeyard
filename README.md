@@ -21,39 +21,100 @@ Nodeyard は Node.js を用いて、小規模な Web アプリケーションを
 
 Node.js の v4.x、v5.x、v6.x の最新版での動作を確認しています。  
 
-## Usage
-### プロジェクトセットアップ
+## Development on Local
+### Setup
 
     git clone https://github.com/AKIRA-MIYAKE/Nodeyard.git
     cp -r Nodeyard [app-name]
     cd [app-name]
     npm install
+    npm run build
 
-### ビルド
+### Build
 
     npm run build
 
-### ビルド + ファイル監視
+### Build + Watch
 
     npm run watch
 
-### ビルド + ファイル監視 + オートリロード
+### Build + Watch + Auto Reload
 
     npm run serve
 
-### ユニットテスト + 構文チェック + ファイル監視
+Web サーバには `localhost:3000` から、`/src/public` 以下のコンテンツには `localhost:8080/webpack-dev-server/` からアクセスできます。  
+
+### Run
+
+    npm start
+
+デフォルトではポート 3000 で起動します。  
+
+### Unit Test + Lint
+
+    npm run check
+
+### Unit Test + Lint + Watch
 
     npm run dev
 
-### API ドキュメント
+### Create API Document
 
     npm run jsdoc
 
-### スタイルガイド
+### Create Style Guide
 
     npm run styleguide
 
-## Heroku へのデプロイ
+## Development on Docker (Beta)
+Docker を利用して、PostgreSQL と Redis を含んだ開発環境を構築することができます。  
+一部機能は Docker for Mac Beta のみでの利用が可能です。  
+
+### プロジェクトセットアップ
+
+    git clone https://github.com/AKIRA-MIYAKE/Nodeyard.git
+    cp -r Nodeyard [app-name]
+    cd [app-name]
+    docker-compose build
+    docker-compose run --rm web npm run build
+
+### Build
+
+    docker-compose run --rm web npm run build
+
+### Build + Watch (Mac Beta Only)
+
+    docker-compose run --rm web npm run watch
+
+### Build + Watch + Auto Reload (Mac Beat Only)
+
+    docker-compose up
+
+Web サーバには `localhost:3000` から、`/src/public` 以下のコンテンツには `localhost:8080/webpack-dev-server/` からアクセスできます。  
+
+### Unit Test + Lint
+
+    docker-compose run --rm web npm run check
+
+### Unit Test + Lint + Watch (Mac Beat Only)
+
+    docker-compose run --rm web npm run dev
+
+### Create API Document
+
+    docker-compose run --rm web npm run jsdoc
+
+### Create Style Guide
+**Caution**  
+以下のエラーが発生し、`styleguide/index.html` が生成されないことが頻繁にあります。  
+
+    Error: EBADF: bad file descriptor, chmod '/nodeyard/styleguide/bower_components/octicons/*
+
+エラーが発生するファイルは一定でなく、エラーが発生せずにスタイルガイド生成が成功する場合もあります。  
+
+    docker-compose run --rm web npm run styleguide
+
+## Deploy to Heroku
 Heroku へアプリケーションをデプロイするための `Procfile` と `app.json` を用意しています。  
 デフォルトの設定でもアプリケーションのデプロイ、起動を行うことができますが、必要に応じて修正を行ってください。  
 Heroku 上でプロダクションコードをビルドするタスクを実行するため、ビルド後のコードを別途管理する必要はありません。  
