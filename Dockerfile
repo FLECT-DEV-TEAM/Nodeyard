@@ -5,7 +5,6 @@ COPY scripts/ /nodeyard/scripts/
 
 WORKDIR /nodeyard
 
-RUN npm install
-RUN npm cache clean
+RUN npm install && npm cache clean
 
 VOLUME ["/nodeyard/node_modules"]
